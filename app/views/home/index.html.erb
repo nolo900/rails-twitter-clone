@@ -1,0 +1,24 @@
+<div class="well">
+  <h3>Main tagline about the organization</h3>
+  <h4>Secondary tagline about the organization</h4>
+</div>
+
+<% @questions.each do |q| %>
+  <div class="media">
+    <div class="media-left">
+      <a href="#">
+        <%#= image_tag('dummyProfileMediaObj.svg', :class => "media-object") %>
+        <%#= image_tag('http://www.gravatar.com/avatar/424242', :class => "media-object") %>
+        <%= image_tag(q.gravatar) %>
+      </a>
+    </div>
+
+    <div class="media-body">
+      <h4 class="media-heading"><%= q.email %> asked:</h4>
+      <div><%= q.body %></div>
+      <div><sm><%= time_ago_in_words q.created_at.to_date %> ago</sm></div>
+      <div><a href="/questions/12" class="btn btn-success btn-xs">Answers</a></div>
+    </div>
+  </div>
+<% end  %>
+
