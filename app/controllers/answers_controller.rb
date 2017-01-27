@@ -1,15 +1,14 @@
 class AnswersController < ApplicationController
 
-  def create
-    Answer.create(answer_params)
-
-    redirect_to
-  end
-
   def show
-    @answer = Answer.find_by_question_id(params[:id])
+    # @answer = Answer.find_by_question_id(params[:id])
   end
 
+  def create
+    question = Question.find(params[:answer][:question_id])
+    question.answers.create(answer_params)
+    redirect_to question
+  end
 
   private
 

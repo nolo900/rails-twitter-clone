@@ -16,7 +16,7 @@
     <div class="media-body">
       <h4 class="media-heading"><%= q.email %> asked:</h4>
       <div><%= q.body %></div>
-      <div><sm><%= time_ago_in_words q.created_at.to_date %> ago</sm></div>
+      <div><sm><%= time_ago_in_words q.created_at.to_datetime %> ago</sm></div>
       <div><a href="<%= question_path(q) %>" class="btn btn-success btn-xs">Answers</a></div>
     </div>
   </div>

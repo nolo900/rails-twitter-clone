@@ -23,20 +23,21 @@
       <div><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#new-answer-modal">Submit new answer</button></div>
       <%= render 'home/new_answer_form' %>
 
-      <%# @answers.each do |a| %>
+      <% @question.answers.each do |a| %>
         <div class="media">
           <div class="media-left">
             <a href="#">
-              <%= image_tag('dummyProfileMediaObj.svg') %>
+              <%#= image_tag('dummyProfileMediaObj.svg') %>
+              <%= image_tag(a.gravatar) %>
             </a>
           </div>
 
           <div class="media-body">
-            <h4 class="media-heading"> answered:</h4>
-
+            <h4 class="media-heading"><%= a.email %> answered:</h4>
+            <%= a.body %>
           </div>
         </div>
-      <%# end %>
+      <% end %>
 
     </div>
   </div>
