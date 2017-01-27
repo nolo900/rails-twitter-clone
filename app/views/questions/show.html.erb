@@ -1,0 +1,46 @@
+<div class="media">
+  <div class="lead well">
+
+    <div class="media">
+      <div class="media-left">
+      <a href="#">
+        <%= image_tag(@question.gravatar) %>
+      </a>
+      </div>
+
+      <div class="media-body">
+        <h4 class="media-heading"><%= @question.email %> asked:</h4>
+        <%= @question.body %>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      
+      <div><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#new-answer-modal">Submit new answer</button></div>
+      <%= render 'home/new_answer_form' %>
+
+      <%# @answers.each do |a| %>
+        <div class="media">
+          <div class="media-left">
+            <a href="#">
+              <%= image_tag('dummyProfileMediaObj.svg') %>
+            </a>
+          </div>
+
+          <div class="media-body">
+            <h4 class="media-heading"> answered:</h4>
+
+          </div>
+        </div>
+      <%# end %>
+
+    </div>
+  </div>
+
+
+
+</div>
